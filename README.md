@@ -26,7 +26,7 @@ The line `shark_rect.colliderect(shrimp_rect)` will return a Boolean if the two 
 <br><br>
 
 ## Optimizing graphics for sprite collisions
-Compare the two graphcis in this repo, [`/`shrimp.png`](images/shrimp.png) and [`shrimp_uncropped.png`](images/shrimp_uncropped.png):
+Compare the two graphcis in this repo, [`shrimp.png`](images/shrimp.png) and [`shrimp_uncropped.png`](images/shrimp_uncropped.png):
 
 ![screenshot](images/shrimp_screenshots.png)
 
