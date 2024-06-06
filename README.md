@@ -34,7 +34,7 @@ The transparent area (or "alpha channel") of the shrimp graphic on the left is m
 
 See the version of my demo at [`collisions_problems_uncropped.py`](collisions_problems_uncropped.py). Here, I am using the uncropped shrimp graphic. You will see that the collision with the shark happens far earlier than expected.
 
-To avoid this, make sure your sprites are optimized by cropping unnecessary alpha channel background in an image editor such as [https://photopea.com](Photopea). Make sure to save your images as PNG to preserve the transparency.
+To avoid this, make sure your sprites are optimized by cropping unnecessary alpha channel background in an image editor such as [Photopea](https://photopea.com). Make sure to save your images as PNG to preserve the transparency.
 
 <br><br>
 
