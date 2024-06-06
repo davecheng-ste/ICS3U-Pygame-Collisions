@@ -8,7 +8,7 @@ The `Rect` object also gives us access to the `.colliderect()` method, which ret
 
 ![screenshot](images/screenshot01.png)
 
-The file [`collisions_original.py`](collisions_original.py) demonstrates what you can do when the shark and shrimp sprites collide:
+The file [`collisions_good.py`](collisions_good.py) demonstrates what you can do when the shark and shrimp sprites collide:
 
 ```python
 # Handle shark and shrimp collisions
@@ -22,6 +22,19 @@ if shark_rect.colliderect(shrimp_rect):
 ```
 
 The line `shark_rect.colliderect(shrimp_rect)` will return a Boolean if the two rects collide. We then handle the `True` condition to reset the shrimp position and increase the score.
+
+<br><br>
+
+## Optimizing graphics for sprite collisions
+Compare the two graphcis in this repo, [`/`shrimp.png`](images/shrimp.png) and [`shrimp_uncropped.png`](images/shrimp_uncropped.png):
+
+![screenshot](images/shrimp_screenshots.png)
+
+The transparent area (or "alpha channel") of the shrimp graphic on the left is much larger than the one on the right. If you are using uncropped images like the one on the left, your `Rect` objects might cause unexpected collision behaviour.
+
+See the version of my demo at [`collisions_problems_uncropped.py`](collisions_problems_uncropped.py). Here, I am using the uncropped shrimp graphic. You will see that the collision with the shark happens far earlier than expected.
+
+To avoid this, make sure your sprites are optimized by cropping unnecessary alpha channel background in an image editor such as [https://photopea.com](Photopea). Make sure to save your images as PNG to preserve the transparency.
 
 <br><br>
 
@@ -59,7 +72,7 @@ if shrimp_rect.collidepoint(mouse_pos):
 <br><br>
 
 ## Refactoring code for readability and modularity
-For the final example, I've refactored the code from [`collisions_original.py`](collisions_original.py) to clean it up. 
+For the final example, I've refactored the code from [`collisions_good.py`](collisions_good.py) to clean it up. 
 
 Specifically, I tried to break down the organization of the game into a strict *input, processing, output* model. Look at my main game loop in th refactored version, [`collisions_refactored.py`](collisions_refactored.py):
 
